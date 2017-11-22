@@ -5,84 +5,84 @@
   <meta charset="UTF-8">
   <title>Toggle Overlay</title>
   <!-- Styles for the Overlay plugin -->
-	<link href="//players.brightcove.net/videojs-overlay/1/videojs-overlay.css" rel="stylesheet">
+  <link href="//players.brightcove.net/videojs-overlay/1/videojs-overlay.css" rel="stylesheet">
 
-	<style>
-		/* Override default overlay styles */
-		.video-js .vjs-overlay {
-			width: 100%;
-			height: 100%;
-			margin: auto;
-			left: 0;
-			background: none;
-		}
-		/* Hide the overlay */
-		.hide-overlay .vjs-overlay {
-			display: none;
-		}
-	</style>
+  <style>
+    /* Override default overlay styles */
+    .video-js .vjs-overlay {
+    	width: 100%;
+    	height: 100%;
+    	margin: auto;
+    	left: 0;
+    	background: none;
+    }
+    /* Hide the overlay */
+    .hide-overlay .vjs-overlay {
+    	display: none;
+    }
+  </style>
 </head>
 
 <body>
   <!-- Player embed code with an id attribute added -->
-	<video id="myPlayerID"
-	  data-video-id="4029697544001"
-		data-account="1752604059001"
-		data-player="default"
-		data-embed="default"
-		data-application-id
-		class="video-js"
-		controls
-		width="640"
-		height="360"></video>
-	<script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+  <video id="myPlayerID"
+    data-video-id="4029697544001"
+    data-account="1752604059001"
+    data-player="default"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls
+    width="640"
+    height="360"></video>
+  <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
 
   <!-- Button to show and hide the overlay -->
-	<br/>
-	<input id="overlayButton" type="button" value="Toggle Overlay">
+  <br/>
+  <input id="overlayButton" type="button" value="Toggle Overlay">
 
   <!-- Script for the Overlay plugin -->
-	<script src="//players.brightcove.net/videojs-overlay/1/videojs-overlay.min.js"></script>
+  <script src="//players.brightcove.net/videojs-overlay/1/videojs-overlay.min.js"></script>
 
-	<script type="text/JavaScript">
-		var myPlayer,
-			overlayDisplayed,
-			eOverlayButton = document.getElementById("overlayButton");
+  <script type="text/JavaScript">
+    var myPlayer,
+    	overlayDisplayed,
+    	eOverlayButton = document.getElementById("overlayButton");
 
-		videojs("myPlayerID").ready(function(){
-			// When the player is ready, get a reference to it
-			myPlayer = this;
+    videojs("myPlayerID").ready(function(){
+    	// When the player is ready, get a reference to it
+    	myPlayer = this;
 
       // Initialize the overlay plugin with a clickable image
-			myPlayer.overlay({
-			  "overlays": [
-			    {
-			      "align": "top",
-			      "start" : "loadedmetadata",
-			      "content": "<a href='http://www.brightcove.com'><img src='http://solutions.brightcove.com/bcls/assets/images/modus_overlay.png'></a>"
-			    }
-			  ],
-			  "content": "Default overlay content"
-			});
+      myPlayer.overlay({
+        "overlays": [
+          {
+            "align": "top",
+            "start" : "loadedmetadata",
+            "content": "<a href='http://www.brightcove.com'><img src='http://solutions.brightcove.com/bcls/assets/images/modus_overlay.png'></a>"
+          }
+        ],
+        "content": "Default overlay content"
+      });
 
-			// Initially hide the overlay
-			overlayDisplayed = false;
-			myPlayer.addClass("hide-overlay");
+  		// Initially hide the overlay
+      overlayDisplayed = false;
+      myPlayer.addClass("hide-overlay");
 
       // Listen for the click event on the Toggle Overlay button
-			eOverlayButton.addEventListener("click",function(){
-				if (overlayDisplayed) {
-					// Hide the overlay
-					overlayDisplayed = false;
-					myPlayer.addClass("hide-overlay");
-				} else {
-					// Show the overlay
-					overlayDisplayed = true;
-					myPlayer.removeClass("hide-overlay");
-				}
-			});
-		});
-	</script>
+      eOverlayButton.addEventListener("click",function(){
+        if (overlayDisplayed) {
+        	// Hide the overlay
+        	overlayDisplayed = false;
+        	myPlayer.addClass("hide-overlay");
+        } else {
+        	// Show the overlay
+        	overlayDisplayed = true;
+        	myPlayer.removeClass("hide-overlay");
+        }
+      });
+  	});
+  </script>
 
 </body>
 
