@@ -1,6 +1,6 @@
 <!-- BE SURE TO UPDATE NAME AND LINK TO DOC -->
 
-# 8187-toggling-overlay
+# 18187-toggling-overlay
 For more information about this sample see: https://support.brightcove.com/brightcove-player-sample-toggling-overlay.
 
 <p>The purpose and structure of files in this repo are:</p>
